@@ -1,0 +1,29 @@
+/* 
+    Created on : 28/12/2016, 11:04:09 AM
+    Author     : Aph
+*/
+
+
+
+
+
+
+
+
+/* ************************************************************************** */
+/* ::::::::::::::::::::::::::::::::: SIDEBAR :::::::::::::::::::::::::::::::: */
+/* ************************************************************************** */
+.sidebarButton {
+    display: none;/**/
+    left: 20px; right: auto;
+}
+.sidebarMenu {
+    left: 0px; right: auto;
+    background-color: rgba(85,85,85,1.0);
+}
+.closeSidebar {
+    left: 20px; right: auto;
+}
+.sidebarLinks:hover {
+    color: rgba(85,85,85,1.0);
+}

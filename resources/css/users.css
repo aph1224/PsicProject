@@ -1,0 +1,51 @@
+/* 
+    Created on : 31/12/2016, 09:45:30 AM
+    Author     : Aph
+*/
+
+
+
+/* Botón para cerrar sesión */
+.headerExit {
+    width: 120px;
+
+    line-height: 25px;
+    text-decoration: none;
+}
+
+
+
+/* Título del contenido principal */
+.mainWelcomeHeader {
+    font-size: 30px;
+}
+
+
+
+
+/* ************************************************************************** */
+/* ::::::::::::::::::::::::::::::::: SIDEBAR :::::::::::::::::::::::::::::::: */
+/* ************************************************************************** */
+.sidebarButton {
+    display: none;/**/
+    left: 20px; right: auto;
+}
+.sidebarMenu {
+    left: 0px; right: auto;
+    background-color: rgba(85,85,85,1.0);
+}
+.closeSidebar {
+    left: 20px; right: auto;
+}
+.sidebarLinks:hover {
+    color: rgba(85,85,85,1.0);
+}
+
+
+
+
+/* Contenedor de todos los usuarios */
+.usersContainer {
+    margin-top: 50px;
+    background: red;
+}

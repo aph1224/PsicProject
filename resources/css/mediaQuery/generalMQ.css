@@ -1,0 +1,11 @@
+/* 
+    Created on : 31/12/2016, 09:49:26 AM
+    Author     : Aph
+*/
+
+
+@media screen and (max-width: 820px) {
+    .sidebarnav {
+        display: block;
+    }
+}

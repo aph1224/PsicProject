@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Usuarios</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../resources/css/general.css" />
+        <link type="text/css" rel="stylesheet" href="../resources/css/mediaQuery/generalMQ.css" />
+        <link type="text/css" rel="stylesheet" href="../resources/css/users.css" />
+        <link type="text/css" rel="stylesheet" href="../resources/css/mediaQuery/usersMQ.css" />
+
+        <link rel="shortcut icon" type="image/png" href="../resources/img/ico/icoHeader.png" />
+
+        <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+        <script src="../controller/general.js"></script>
+        <script src="../controller/jquery.js"></script>
+        <script src="../controller/users.js"></script>
+    </head>
+    <body>
+
+
+
+        <!-- CABECERA -->
+        <div class="header">
+            <div class="headerPanelLocation">Usuarios</div>
+            <a href="home.html" class="headerExit">Para salir regresa a Inicio</a>
+
+            <!-- Botón para abrir el menú (solo responsive) -->
+            <div class="sidebarButton" onclick="openNav()">
+                <div class="linesFromSidebar"></div>
+                <div class="linesFromSidebar" style="top: 12px;"></div>
+                <div class="linesFromSidebar" style="top: 25px;"></div>
+            </div>
+        </div>
+
+
+
+        <!-- CONTENEDOR DEL MENÚ LATERAL -->
+        <div class="navigatorMenu">
+            <div class="navigatorTitle">
+                Sistema de control
+            </div>
+            <div class="navigatorOptionsContainer">
+                <a style="text-decoration: none;" href="home.html">
+                    <div class="navigatorOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/1.png" alt="Home" />
+                        Inicio
+                    </div>
+                </a>
+                <a style="text-decoration: none;" href="users.html">
+                    <div class="navigatorOption selectedSidebarOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/2.png" alt="Users" />
+                        Usuarios
+                    </div>
+                </a>
+                <a style="text-decoration: none;" href="#">
+                    <div class="navigatorOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/3.png" alt="Register" />
+                        Registro
+                    </div>
+                </a>
+                <a style="text-decoration: none;" href="#">
+                    <div class="navigatorOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/4.png" alt="Search" />
+                        Búsqueda
+                    </div>
+                </a>
+                <a style="text-decoration: none;" href="#">
+                    <div class="navigatorOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/5.png" alt="Settings" />
+                        Configuración
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+        <!-- CONTENEDOR PRINCIPAL DE LA INFORMACIÓN DE LA PÁGINA -->
+        <div class="mainContainer">
+            <label class="mainWelcomeHeader">Aquí podrás consultar a todos tus usuarios que haz registrado</label>
+
+            <div class="usersContainer">
+
+                <label>Nombre: </label>
+                <input type="text" value="Julia Roberts" />
+                <label>Cumpleaños: </label>
+                <input type="text" value="1987-07-22" />
+                <label>Correo electrónico: </label>
+                <input type="text" value="sdfsdbf_sdf@gmail.com" />
+                <label>Teléfono </label>
+                <input type="text" value="0" />
+
+                <br/>
+
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- MENÚ LATERAL QUE ABRE Y CIERRA (SOLO RESPONSIVE) -->
+        <div id="mySidenav" class="sidebarnav">
+            <div id="sidebarMenu" class="sidebarMenu">
+                <div class="closeSidebar" onclick="closeNav()">
+                    <div class="componentCloseSidebar1"></div>
+                    <div class="componentCloseSidebar2"></div>
+                </div>
+                <div class="containerSidebarLinks">
+
+                    <button class="sidebarLinks" onclick="window.location = 'home.html'">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/1.png" alt="Home" />
+                        Inicio
+                    </button>
+
+                    <button class="sidebarLinks selectedSidebarOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/2.png" alt="Users" />
+                        Usuarios
+                    </button>
+
+                    <button class="sidebarLinks">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/3.png" alt="Register" />
+                        Registro
+                    </button>
+
+                    <button class="sidebarLinks">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/4.png" alt="Search" />
+                        Búsqueda
+                    </button>
+
+                    <button class="sidebarLinks">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/5.png" alt="Settings" />
+                        Configuración
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

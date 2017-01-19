@@ -1,0 +1,48 @@
+/* 
+    Created on : 29/12/2016, 01:48:43 PM
+    Author     : Aph
+*/
+
+
+@media screen and (max-width: 820px) {
+    /* Mostrar el botón para abrir/cerrar el menú responsivo */
+    .sidebarButton {
+        display: block;
+    }
+
+    /* Ocultar el menú lateral */
+    .navigatorMenu {
+        display: none;
+    }
+
+    /* Establecer  */
+    .header {
+        left: 0%;
+        width: 100%;
+    }
+
+    /**/
+    .headerPanelLocation {
+        left: 0px;
+        width: 100%;
+
+        text-align: center;
+    }
+    .mainContainer {
+        left: 0%;
+        width: 100%;
+    }
+    .mainWelcomeHeader {
+        font-size: 60px;
+    }
+    #hour {
+        font-size: 40px;
+    }
+    #date {
+        font-size: 40px;
+    }
+    
+    .selectedSidebarOption {
+        border-left: 15px solid #FFF;
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SCP Ψ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link type="text/css" rel="stylesheet" href="../resources/css/general.css" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../resources/css/login.css" />
+
+        <link rel="shortcut icon" type="image/png" href="../resources/img/ico/icoHeader.png" />
+
+        <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+        <script src="../controller/general.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="../controller/login.js"></script>
+
+    </head>
+    <body>
+
+
+
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <!-- :::::::::::::::::::::::::::: HEADER ::::::::::::::::::::::::::: -->
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <div class="mainHeaderContainer">
+
+            <!-- Icono de la cabecera -->
+            <div class="headerImg"></div>
+
+            <!-- Botón para abrir el sidebar menu -->
+            <div class="sidebarButton" onclick="openNav()">
+                <div class="linesFromSidebar"></div>
+                <div class="linesFromSidebar" style="top: 12px;"></div>
+                <div class="linesFromSidebar" style="top: 25px;"></div>
+            </div>
+        </div>
+
+
+
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <!-- ::::::::::::::::::::::: BACKGROUND IMAGE :::::::::::::::::::::: -->
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <div class="bckgndImg"></div>
+
+
+
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <!-- ::::::::::::::::::::::::: SIDEBAR MENU :::::::::::::::::::::::: -->
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <div id="mySidenav" class="sidebarnav">
+            <div id="sidebarMenu" class="sidebarMenu">
+                <div class="closeSidebar" onclick="closeNav()">
+                    <div class="componentCloseSidebar1"></div>
+                    <div class="componentCloseSidebar2"></div>
+                </div>
+                <div class="containerSidebarLinks">
+                    <button class="sidebarLinks">Acerca</button>
+                    <a href="https://www.facebook.com/" target="_blank" class="sidebarLinks">Facebook</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <!-- :::::::::::::::::::::::::: LOGIN FORM ::::::::::::::::::::::::: -->
+        <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+        <div class="loginFormContainer">
+            <input class="loginFormInput" type="email" id="username" placeholder="Correo electrónico" autocomplete="off" required />
+            <br/>
+            <input class="loginFormInput" type="password" id="password" placeholder="Contraseña" autocomplete="off" required />
+            <br/>
+            <button class="buttonStyle" onclick="logIn();" >Ingresar</button>
+            <br/>
+            <button class="buttonStyle" id="googleButton" onclick="logInGoogle();" >Inicia con Google</button>
+        </div>
+
+
+
+    </body>
+</html>

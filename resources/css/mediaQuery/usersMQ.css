@@ -1,0 +1,42 @@
+/* 
+    Created on : 11/01/2017, 06:48:56 PM
+    Author     : Aph
+*/
+
+
+@media screen and (max-width: 820px) {
+    /* Mostrar el botón para abrir/cerrar el menú responsivo */
+    .sidebarButton {
+        display: block;
+    }
+
+    /* Ocultar el menú lateral */
+    .navigatorMenu {
+        display: none;
+    }
+
+    /* Establecer  */
+    .header {
+        left: 0%;
+        width: 100%;
+    }
+
+    /**/
+    .headerPanelLocation {
+        left: 0px;
+        width: 100%;
+
+        text-align: center;
+    }
+    .mainContainer {
+        left: 0%;
+        width: 100%;
+    }
+    .mainWelcomeHeader {
+        font-size: 26px;
+    }
+    
+    .selectedSidebarOption {
+        border-left: 15px solid #FFF;
+    }
+}
