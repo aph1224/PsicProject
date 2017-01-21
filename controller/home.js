@@ -10,23 +10,65 @@ var config = {
     messagingSenderId: "139855429923"
 };
 firebase.initializeApp(config);
+//var database = firebase.database();
+//var user = firebase.auth().currentUser;
+//var uid = user.uid;
+//var name = user.displayName;
+//var email = user.email;
+//var photo = user.photoURL;
 
-console.log("Home...");
 
-var user = firebase.auth().currentUser;
 
-if (user !== null) {
-    user.providerData.forEach(function (profile) {
-        console.log("Sign-in provider: " + profile.providerId);
-        console.log("  Provider-specific UID: " + profile.uid);
-        console.log("  Name: " + profile.displayName);
-        console.log("  Email: " + profile.email);
-        console.log("  Photo URL: " + profile.photoURL);
-    });
-} else {
-    console.log("user null...");
+// AUTENTICACIÓN DEL USUARIO
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        // Código si está entrando a la sesión
+        showHourDate();
+        checkUser();
+    } else {
+        // Código si esta saliendo de la sesión
+    }
+});
+
+
+
+// FUNCIÓN PARA VERIFICAR SI EL USUARIO ESTA EN LA BD
+function checkUser() {
+    var database = firebase.database();
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+
+    var refer = database.ref("psic/" + uid);
+    if (user !== null) {
+        console.log("USER FULL");
+        refer.on("value", function (snapshot) {
+            var data = snapshot.val();
+            if (data !== null) {
+                console.log("DATA FULL");
+            } else {
+                console.log("DATA NULL");
+                addUserUID();
+            }
+        });
+    } else {
+        console.log("USER NULL");
+    }
 }
 
+// FUNCIÓN PARA AGREGAR EL UID DEL USUARIO A LA BD
+function addUserUID() {
+    var database = firebase.database();
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+    var email = user.email;
+    var refer = database.ref("psic/" + uid + "/personalInfo/");
+    var obj = {
+        email: email
+    };
+    refer.update(obj);
+    console.log("User added with email");
+    console.log("Email --> " + email);
+}
 
 
 
@@ -39,18 +81,6 @@ function logOut() {
         // An error happened.
     });
 }
-
-
-
-// AUTENTICACIÓN DEL USUARIO
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-        // Código si está entrando a la sesión
-        console.log("Correct user --> ");
-    } else {
-        // Código si esta saliendo de la sesión
-    }
-});
 
 
 
@@ -79,6 +109,9 @@ function showHourDate() {
         ampm = "pm";
     } else {
         ampm = "am";
+        if (hour === 0) {
+            hour = 12;
+        }
     }
 
     var fechaCompleta = (diasSemana[fechaCompleta.getDay()] + " " + fechaCompleta.getDate() + " de " + meses[fechaCompleta.getMonth()] + " de " + fechaCompleta.getFullYear()).toString();
@@ -96,10 +129,3 @@ function checkTime(i) {
     }
     return i;
 }
-
-
-
-// PARA CARGAR LAS FUNCIONES AL INICIAR LA PÁGINA
-window.onload = function () {
-    showHourDate();
-};

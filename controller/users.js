@@ -9,17 +9,36 @@ var config = {
     messagingSenderId: "139855429923"
 };
 firebase.initializeApp(config);
+//var database = firebase.database();
+//var user = firebase.auth().currentUser;
+//var uid = user.uid;
+//var name = user.displayName;
+//var email = user.email;
+//var photo = user.photoURL;
 
-console.log("Entrando...");
 
-var userData = firebase.auth().currentUser;
-//var userUid = userData.uid;
-//var userName = userData.displayName;
-console.log("Usuario --> " );
 
-loadData();
+// AUTENTICACIÓN DEL USUARIO
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        // Código si está entrando a la sesión
+        loadData();
+    } else {
+        // Código si esta saliendo de la sesión
+    }
+});
+
+
 
 function loadData() {
-    //var query = firebase.database().ref(userUid).orderByKey();
-    console.log(firebase.currentUser());
+    var database = firebase.database();
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+    var name = user.displayName;
+    var email = user.email;
+    var photo = user.photoURL;
+    console.log(uid);
+    console.log(name);
+    console.log(email);
+    console.log(photo);
 }

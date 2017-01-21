@@ -1,0 +1,105 @@
+/* 
+    Created on : 19/01/2017, 10:12:10 PM
+    Author     : Aph
+*/
+
+
+/* Botón para cerrar sesión */
+.headerExit {
+    width: 120px;
+
+    line-height: 25px;
+    text-decoration: none;
+}
+
+
+
+/* ************************************************************************** */
+/* ::::::::::::::::::::::::::::::::: SIDEBAR :::::::::::::::::::::::::::::::: */
+/* ************************************************************************** */
+.sidebarButton {
+    display: none;/**/
+    left: 20px; right: auto;
+}
+.sidebarMenu {
+    left: 0px; right: auto;
+    background-color: rgba(85,85,85,1.0);
+}
+.closeSidebar {
+    left: 20px; right: auto;
+}
+.sidebarLinks:hover {
+    color: rgba(85,85,85,1.0);
+}
+
+
+
+/* Contenedor del formulario para actualizar los datos del psic */
+.mainContainerUpdateForm {
+    margin-top: 100px;
+}
+
+
+
+/* DIV que contiene todo lo de "Eliminar cuenta" */
+#toggle {
+    display: none;
+}
+/* Botón para eliminar la cuenta */
+.deleteAccountButton {
+    position: relative;
+    width: 100%; height: auto;
+    margin-top: 100px;
+    border: 0px;
+    padding: 10px 0px;
+    background-color: #5F2E75;
+    cursor: pointer;
+
+    color: #FFF;
+    font-size: 18px;
+    
+    transition: 1s background-color;
+}
+.deleteAccountButton:focus {
+    outline: none;
+    background-color: #3C0000;
+}
+.deleteAccountButton:hover {
+    background-color: #3C0000;
+}
+/* Información cuando quiere borrar la cuenta */
+.deleteAccountInfo {
+    position: relative;
+    left: 50%;
+    width: 300px; height: auto;
+    margin-left: -160px;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #FFF;
+
+    color: #5F2E75;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* Triángulo de la info cuando elimina la cuenta */
+.deleteAccountTriangle {
+    position: relative;
+    left: 50%;
+    width: 0px; height: 0px;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #FFF;
+}
+
+
+/* Botón de guardar */
+.buttonStyle {
+    margin-top: 20px;
+}
+
+/* Estilos para los inputs */
+.formInput {
+    margin-bottom: 10px;
+    width: 300px;
+}

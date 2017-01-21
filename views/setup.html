@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Configuración Ψ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../resources/css/general.css" />
+        <link type="text/css" rel="stylesheet" href="../resources/css/mediaQuery/generalMQ.css" />
+        <link type="text/css" rel="stylesheet" href="../resources/css/setup.css" />
+        <link type="text/css" rel="stylesheet" href="../resources/css/mediaQuery/setupMQ.css" />
+
+        <link rel="shortcut icon" type="image/png" href="../resources/img/ico/icoHeader.png" />
+
+        <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+        <script src="../controller/general.js"></script>
+        <script src="../controller/setup.js"></script>
+    </head>
+    <body>
+
+
+
+
+
+        <!-- CABECERA -->
+        <div class="header">
+            <div class="headerPanelLocation">Configuración</div>
+            <a href="home.html" class="headerExit">Para salir regresa a Inicio</a>
+
+            <!-- Botón para abrir el menú (solo responsive) -->
+            <div class="sidebarButton" onclick="openNav()">
+                <div class="linesFromSidebar"></div>
+                <div class="linesFromSidebar" style="top: 12px;"></div>
+                <div class="linesFromSidebar" style="top: 25px;"></div>
+            </div>
+        </div>
+
+
+
+        <!-- CONTENEDOR DEL MENÚ LATERAL -->
+        <div class="navigatorMenu">
+            <div class="navigatorTitle">
+                Sistema de control
+            </div>
+            <div class="navigatorOptionsContainer">
+                <a style="text-decoration: none;" href="home.html">
+                    <div class="navigatorOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/1.png" alt="Home" />
+                        Inicio
+                    </div>
+                </a>
+                <a style="text-decoration: none;" href="users.html">
+                    <div class="navigatorOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/2.png" alt="Users" />
+                        Usuarios
+                    </div>
+                </a>
+                <a style="text-decoration: none;" href="#">
+                    <div class="navigatorOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/3.png" alt="Register" />
+                        Registro
+                    </div>
+                </a>
+                <a style="text-decoration: none;" href="#">
+                    <div class="navigatorOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/4.png" alt="Search" />
+                        Búsqueda
+                    </div>
+                </a>
+                <a style="text-decoration: none;" href="#">
+                    <div class="navigatorOption selectedSidebarOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/5.png" alt="Settings" />
+                        Configuración
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+        <!-- CONTENEDOR PRINCIPAL DE LA INFORMACIÓN DE LA PÁGINA -->
+        <div class="mainContainer">
+            <label class="mainWelcomeHeader">Aquí podrás agregar/actualizar tus datos personales</label>
+
+            <div class="mainContainerUpdateForm">
+                <input id="inputName" class="formInput" type="text" placeholder="Nombre completo"/>
+                <br/>
+                <input id="inputPhone" class="formInput" type="tel" placeholder="Teléfono"/>
+                <br/>
+                <input id="inputEmail" class="formInput" type="email" placeholder="Email" value="" readonly/>
+                <br/>
+                <input id="inputSpecialty" class="formInput" type="text" placeholder="Especialidad" title="Especialidad"/>
+                <br/>
+                <label>Fecha de nacimiento</label>
+                <input id="inputBirthday" class="formInput" type="date" />
+                <br/>
+                <button class="buttonStyle" onclick="callUpdateInfo();">Guardar</button>
+            </div>
+
+            <button class="deleteAccountButton" onclick="toggle();">
+                Eliminar cuenta
+            </button>
+            <div id="toggle">
+                <div class="deleteAccountTriangle"></div>
+                <div class="deleteAccountInfo">
+                    ¿Seguro que quieres eliminar tu cuenta?
+                    <br/>
+                    Al hacerlo, se borrarán todos tus datos.
+                    <br/>
+                    No habrá forma de recuperarlos.
+                    <br>
+                    <button class="buttonStyle" onclick="deleteUserInfo();">Aceptar</button>
+                    <button class="buttonStyle" onclick="closeToggle();">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- MENÚ LATERAL QUE ABRE Y CIERRA (SOLO RESPONSIVE) -->
+        <div id="mySidenav" class="sidebarnav">
+            <div id="sidebarMenu" class="sidebarMenu">
+                <div class="closeSidebar" onclick="closeNav()">
+                    <div class="componentCloseSidebar1"></div>
+                    <div class="componentCloseSidebar2"></div>
+                </div>
+                <div class="containerSidebarLinks">
+
+                    <button class="sidebarLinks" onclick="window.location = 'home.html'">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/1.png" alt="Home" />
+                        Inicio
+                    </button>
+
+                    <button class="sidebarLinks" onclick="window.location = 'users.html'">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/2.png" alt="Users" />
+                        Usuarios
+                    </button>
+
+                    <button class="sidebarLinks">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/3.png" alt="Register" />
+                        Registro
+                    </button>
+
+                    <button class="sidebarLinks">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/4.png" alt="Search" />
+                        Búsqueda
+                    </button>
+
+                    <button class="sidebarLinks selectedSidebarOption">
+                        <img class="navigatorOptionImg" src="../resources/img/ico/5.png" alt="Settings" />
+                        Configuración
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

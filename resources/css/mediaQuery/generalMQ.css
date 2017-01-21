@@ -4,8 +4,43 @@
 */
 
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 880px) {
     .sidebarnav {
         display: block;
+    }
+
+    /* Colocar el contenedor principal de contenido a todo el ancho de la página */
+    .mainContainer {
+        left: 0%;
+        width: 100%;
+    }
+
+    /* Establecer la cabecera en todo el ancho de la página  */
+    .header {
+        left: 0%;
+        width: 100%;
+    }
+
+    /* Color de selección de la opción del menú lateral */
+    .selectedSidebarOption {
+        border-left: 15px solid #FFF;
+    }
+
+    /* Contenedor del título de la cabecera */
+    .headerPanelLocation {
+        left: 0px;
+        width: 100%;
+
+        text-align: center;
+    }
+
+    /* Ocultar el menú lateral */
+    .navigatorMenu {
+        display: none;
+    }
+
+    /* Contenedor del contenido principal */
+    .mainWelcomeHeader {
+        font-size: 40px;
     }
 }

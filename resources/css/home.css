@@ -5,8 +5,10 @@
 
 
 
-
-
+/* Texto central del contenido principal */
+.mainWelcomeHeader {
+    font-size: 80px;
+}
 
 
 
