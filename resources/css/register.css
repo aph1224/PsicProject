@@ -1,0 +1,49 @@
+/* 
+    Created on : 21/01/2017, 09:05:13 AM
+    Author     : Aph
+*/
+
+
+
+/* Botón para cerrar sesión */
+.headerExit {
+    width: 120px;
+
+    line-height: 25px;
+    text-decoration: none;
+}
+
+
+
+/* ************************************************************************** */
+/* ::::::::::::::::::::::::::::::::: SIDEBAR :::::::::::::::::::::::::::::::: */
+/* ************************************************************************** */
+.sidebarButton {
+    display: none;/**/
+    left: 20px; right: auto;
+}
+.sidebarMenu {
+    left: 0px; right: auto;
+    background-color: rgba(85,85,85,1.0);
+}
+.closeSidebar {
+    left: 20px; right: auto;
+}
+.sidebarLinks:hover {
+    color: rgba(85,85,85,1.0);
+}
+
+
+
+/* Contenedor del formulario para agregar pacientes */
+.mainContainerUpdateForm {
+    margin-top: 100px;
+}
+
+
+
+/* Botón de guardar */
+.buttonStyle {
+    margin-top: 20px;
+    padding: 10px 20px;
+}

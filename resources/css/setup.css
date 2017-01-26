@@ -4,6 +4,7 @@
 */
 
 
+
 /* Botón para cerrar sesión */
 .headerExit {
     width: 120px;
@@ -72,7 +73,7 @@
     position: relative;
     left: 50%;
     width: 300px; height: auto;
-    margin-left: -160px;
+    margin-left: -160px; margin-bottom: 10px;
     padding: 10px;
     border-radius: 3px;
     background-color: #FFF;
@@ -93,10 +94,14 @@
 }
 
 
+
 /* Botón de guardar */
 .buttonStyle {
     margin-top: 20px;
+    padding: 10px 20px;
 }
+
+
 
 /* Estilos para los inputs */
 .formInput {

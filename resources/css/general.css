@@ -294,6 +294,10 @@ body {
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
 }
+.buttonStyle:hover {
+    background-color: #FFF;
+    color: #8e44ad;
+}
 .buttonStyle:focus {
     outline: none;
 }
