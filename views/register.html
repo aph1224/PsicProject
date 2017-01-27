@@ -87,6 +87,8 @@
             <label class="mainWelcomeHeader">Aquí podrás registrar a tus nuevos usuarios</label>
 
             <div class="mainContainerUpdateForm">
+                <input id="inputUsersCount" class="formInput" type="text" placeholder="Número de usuario"/>
+                <br/>
                 <input id="inputName" class="formInput" type="text" placeholder="Nombre completo"/>
                 <br/>
                 <input id="inputPhone" class="formInput" type="tel" placeholder="Teléfono"/>
@@ -99,9 +101,9 @@
                 <input id="inputBirthday" class="formInput" type="date" />
                 <br/>
                 <br/>
-                <label>Fecha de inicio</label>
+                <label>Fecha de registro</label>
                 <br/>
-                <input id="inputStartDate" class="formInput" type="text" placeholder="Fecha de inicio" readonly value="2017-01-20" />
+                <input id="inputRegisterDate" class="formInput" type="text" placeholder="Fecha de registro" readonly />
                 <br/>
                 <button class="buttonStyle" onclick="callRegisterUser();">Registrar</button>
             </div>
