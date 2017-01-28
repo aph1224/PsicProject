@@ -17,7 +17,7 @@ firebase.initializeApp(config);
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         // Código si está entrando a la sesión
-        setDate();
+        setInfo();
         testings();
     } else {
         // Código si esta saliendo de la sesión
@@ -33,51 +33,65 @@ function callRegisterUser() {
     var name = document.getElementById('inputName').value;
     var phone = document.getElementById('inputPhone').value;
     var email = document.getElementById('inputEmail').value;
-    var birthday = document.getElementById('inputBirthday').value;
-    var startDate = document.getElementById('inputRegisterDate').value;
+    var bornday = document.getElementById('inputBornday').value;
+    var registerDate = document.getElementById('inputRegisterDate').value;
 
-    registerUser(name, phone, email, birthday, startDate);
+    registerUser(name, phone, email, bornday, registerDate);
 }
 
 
 
 /* Función para registrar a un paciente */
-function registerUser(name, phone, email, birthday, startDate) {
-    console.log("Recording...");
+function registerUser(name, phone, email, bornday, registerDate) {
+    var database = firebase.database();
+    var uid = firebase.auth().currentUser.uid;
+    var usersCount = database.ref("psic/" + uid);
 
-    var x = x + 1;
-
-    var user = firebase.auth().currentUser;
-    var uid = user.uid;
-
-    firebase.database().ref("psic/" + uid + "/user" + x + "/").set({
-        name: name,
-        phone: phone,
-        email: email,
-        birthday: birthday,
-        startDate: startDate
+    usersCount.once('value', function (snapshot) {
+        var numUsers = snapshot.numChildren();
+        var x = (numUsers - 1);
+        firebase.database().ref("psic/" + uid + "/user" + x + "/").set({
+            name: name,
+            phone: phone,
+            email: email,
+            bornday: bornday,
+            registerDate: registerDate
+        });
     });
-
     console.log("Registered");
-    x++;
 
     document.getElementById('inputName').value = "";
     document.getElementById('inputPhone').value = "";
     document.getElementById('inputEmail').value = "";
-    document.getElementById('inputBirthday').value = "";
+    document.getElementById('inputBornday').value = "";
+
+    document.getElementById('successUserCover').style.display = "block";
 }
 
 
 /* Función para establecer la fecha de registro de un paciente */
-function setDate() {
+function setInfo() {
+
+    // Para obtener la fecha actual
     var meses = new Array(
             "Enero", "Febrero", "Marzo", "Abril",
             "Mayo", "Junio", "Julio", "Agosto",
             "Septiembre", "Octubre", "Noviembre", "Diciembre"
             );
-
     var fechaCompleta = new Date();
     fechaCompleta = (fechaCompleta.getDate() + "-" + meses[fechaCompleta.getMonth()] + "-" + fechaCompleta.getFullYear()).toString();
+
+    // Para obtener el número de usuarios registrados
+    var database = firebase.database();
+    var uid = firebase.auth().currentUser.uid;
+    var usersCount = database.ref("psic/" + uid);
+    var numUsers;
+
+    usersCount.once('value', function (snapshot) {
+        numUsers = snapshot.numChildren();
+        console.log(numUsers - 1);
+        document.getElementById('inputUsersCount').value = numUsers;
+    });
 
     document.getElementById('inputRegisterDate').value = fechaCompleta;
 }
@@ -85,14 +99,13 @@ function setDate() {
 
 
 
+
+
+
+
+
+
 /* Funciones para probar distintos elementos */
 function testings() {
-    var database = firebase.database();
-    var uid = firebase.auth().currentUser.uid;
-    var usersCount = database.ref("psic/" + uid);
 
-    usersCount.once('value', function (snapshot) {
-        var numUsers = snapshot.numChildren();
-        console.log(numUsers - 1);
-    });
 }

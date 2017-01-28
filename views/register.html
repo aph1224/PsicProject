@@ -87,7 +87,8 @@
             <label class="mainWelcomeHeader">Aquí podrás registrar a tus nuevos usuarios</label>
 
             <div class="mainContainerUpdateForm">
-                <input id="inputUsersCount" class="formInput" type="text" placeholder="Número de usuario"/>
+                <input id="inputUsersCount" class="formInput" type="text" readonly/>
+                <br/>
                 <br/>
                 <input id="inputName" class="formInput" type="text" placeholder="Nombre completo"/>
                 <br/>
@@ -98,7 +99,7 @@
                 <br/>
                 <label>Fecha de nacimiento</label>
                 <br/>
-                <input id="inputBirthday" class="formInput" type="date" />
+                <input id="inputBornday" class="formInput" type="date" />
                 <br/>
                 <br/>
                 <label>Fecha de registro</label>
@@ -106,6 +107,16 @@
                 <input id="inputRegisterDate" class="formInput" type="text" placeholder="Fecha de registro" readonly />
                 <br/>
                 <button class="buttonStyle" onclick="callRegisterUser();">Registrar</button>
+            </div>
+        </div>
+        
+        <!-- Mensaje cuando registra un usuario -->
+        <div id="successUserCover" class="successUserCover">
+            <div class="SuccessUserMessage">
+                Usuario registrado correctamente
+                <br/>
+                Para añadirle más información a tu usuario, búscalo en la sección "Usuarios"
+                <a href="register.html" class="closeSuccessUser">X</a>
             </div>
         </div>
 
